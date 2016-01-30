@@ -1,0 +1,15 @@
+{
+    "name": "airtype/httpmessagescachemiddleware",
+    "authors": [
+        {
+            "name": "Wes Rice",
+            "email": "wes@wesrice.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HttpMessagesCacheMiddleware\\": "src/"
+        }
+    },
+    "require": {}
+}
