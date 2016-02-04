@@ -14,10 +14,16 @@ class CacheMiddleware
      */
     public function __invoke(Request $request, Response $response, callable $next)
     {
+        if (craft()->config->get('disableCache', 'httpMessagesCacheMiddleware')) {
+            $response = $next($request, $response);
+
+            return $response;
+        }
+
         $cache_duration = $this->getCacheDuration($request);
         $cache_key = $this->getCacheKey($request, $cache_duration);
 
-        if ($cached = \Craft\craft()->cache->get($cache_key)) {
+        if ($cached = craft()->cache->get($cache_key)) {
             return $this->buildResponseFromCache($response, $cached);
         }
 
@@ -41,7 +47,7 @@ class CacheMiddleware
             return $duration;
         }
 
-        return $duration = \Craft\craft()->config->get('defaultCacheDuration', 'httpMessagesCacheMiddleware');
+        return $duration = craft()->config->get('defaultCacheDuration', 'httpMessagesCacheMiddleware');
     }
 
     /**
@@ -74,7 +80,7 @@ class CacheMiddleware
      */
     private function cacheResponse(Response $response, $cache_key, $cache_duration)
     {
-        \Craft\craft()->cache->set($cache_key, [
+        craft()->cache->set($cache_key, [
             'response' => serialize($response),
             'body' => serialize($response->getBody()->getContents())
         ], $cache_duration);
