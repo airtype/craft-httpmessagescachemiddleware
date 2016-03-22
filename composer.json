@@ -1,5 +1,6 @@
 {
     "name": "airtype/httpmessagescachemiddleware",
+    "type": "craft-plugin",
     "authors": [
         {
             "name": "Wes Rice",
@@ -11,5 +12,7 @@
             "HttpMessagesCacheMiddleware\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "composer/installers": "~1.0"
+    }
 }
