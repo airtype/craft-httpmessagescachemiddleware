@@ -1,6 +1,9 @@
 {
-    "name": "airtype/httpmessagescachemiddleware",
+    "name": "airtype/craft-httpmessagescachemiddleware",
     "type": "craft-plugin",
+    "extra": {
+        "installer-name": "httpmessagescachemiddleware"
+    },
     "authors": [
         {
             "name": "Wes Rice",
