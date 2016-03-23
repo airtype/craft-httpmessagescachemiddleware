@@ -2,8 +2,6 @@
 
 namespace Craft;
 
-Craft::import('plugins.httpmessagescachemiddleware.vendor.autoload', true);
-
 class HttpMessagesCacheMiddlewarePlugin extends BasePlugin
 {
     /**
