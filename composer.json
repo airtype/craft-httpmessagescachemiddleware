@@ -1,9 +1,5 @@
 {
     "name": "airtype/craft-httpmessagescachemiddleware",
-    "type": "craft-plugin",
-    "extra": {
-        "installer-name": "httpmessagescachemiddleware"
-    },
     "authors": [
         {
             "name": "Wes Rice",
@@ -13,9 +9,8 @@
     "autoload": {
         "psr-4": {
             "HttpMessagesCacheMiddleware\\": "src/"
-        }
+        },
+        "files": ["config.php"]
     },
-    "require": {
-        "composer/installers": "~1.0"
-    }
+    "require": {}
 }
