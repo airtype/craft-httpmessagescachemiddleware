@@ -10,7 +10,7 @@
         "psr-4": {
             "HttpMessagesCacheMiddleware\\": "src/"
         },
-        "files": ["config.php"]
+        "files": ["functions.php", "config.php"]
     },
     "require": {}
 }
